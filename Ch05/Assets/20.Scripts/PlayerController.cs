@@ -3,7 +3,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 1f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Application.targetFrameRate = 60;
@@ -20,7 +19,6 @@ public class PlayerController : MonoBehaviour
 //        {
 //            transform.Translate(speed, 0, 0);
 //        }
-    }
 
     public void LButtonDown()
     {
