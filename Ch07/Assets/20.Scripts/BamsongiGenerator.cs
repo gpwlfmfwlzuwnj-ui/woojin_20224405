@@ -2,18 +2,27 @@ using UnityEngine;
 
 public class BamsongiGenerator : MonoBehaviour
 {
-    public GameObject BamsongiPrefabs;
+    public GameObject bamsongiPrefab;
+    public float throwForce = 10f;
+
+    float startY;
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            GameObject bamsongi = Instantiate(BamsongiPrefabs);
-            bamsongi.transform.position = transform.position;
+            startY = Input.mousePosition.y;
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            GameObject bamsoni = Instantiate(bamsongiPrefab);
+            bamsoni.transform.position = transform.position;
 
-            //Vector3 dir = new Vector3(0, 200, 2000);
-            //bamsoni.GetComponent<BamsongiController>().Shoot(dir);
+            float power = Input.mousePosition.y - startY;
+
+            Vector3 dir = transform.forward + transform.up * 0.5f;
+            bamsoni.GetComponent<BamsongiController>().Shoot(dir * power * throwForce);
         }
     }
 }
