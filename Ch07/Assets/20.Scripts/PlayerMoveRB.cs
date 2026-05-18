@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class PlayerMoveRigidbody : MonoBehaviour
+public class PlayerMoveRB : MonoBehaviour
 {
     public float moveSpeed = 10f;
-    public float rotationSpeed = 100f;
+    public float rotationSpeed = 10f;
 
     Rigidbody rb;
     private void Start()
