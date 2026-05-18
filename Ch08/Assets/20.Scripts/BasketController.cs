@@ -2,10 +2,15 @@ using UnityEngine;
 
 public class BasketController : MonoBehaviour
 {
+    public AudioClip appleSE;
+    public AudioClip bombSE;
+
+    AudioSource aud;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Application.targetFrameRate = 60;
+        aud = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,10 +34,12 @@ public class BasketController : MonoBehaviour
         if(other.gameObject.tag == "Apple")
         {
             Debug.Log("잡았다");
+            aud.PlayOneShot(appleSE);
         }
         else if(other.gameObject.tag == "Bomb")
         {
             Debug.Log("잡았다");
+            aud.PlayOneShot(bombSE);
         }
 
 
