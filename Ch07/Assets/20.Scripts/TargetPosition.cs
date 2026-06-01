@@ -2,8 +2,11 @@ using UnityEngine;
 
 public class TargetPosition : MonoBehaviour
 {
+    public float size = 1f;
+    public Color color = Color.red;
    private void OnDrawGizmos()
    {
-       Gizmos.DrawSphere(transform.position, 1f);
+       Gizmos.color = color;
+       Gizmos.DrawSphere(transform.position, size);
     }
 }
