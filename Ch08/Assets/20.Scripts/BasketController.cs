@@ -48,7 +48,6 @@ public class BasketController : MonoBehaviour
             director.GetComponent<GameDirector>().GetBomb();
         }
 
-
         Destroy(other.gameObject);
     }
 }

@@ -5,7 +5,6 @@ public class ItemGenerator : MonoBehaviour
     public GameObject bombPrefabs;
 
     public float span = 2f;
-    public int ratio = 3; // 30% Bomb
     float delta = 0f;
 
 
@@ -16,15 +15,13 @@ public class ItemGenerator : MonoBehaviour
         GameObject item;
         if (delta > span)
         {
-            int dice = Random.Range(0, 10);
-
             item = Instantiate(bombPrefabs);
 
 
-            float x = Random.Range(-1f, 5f);
-            float z = Random.Range(-1f, 5f);
+            float x = Random.Range(-4.4f, 10.4f);
+            float z = Random.Range(-7.4f, 7.4f);
             item.transform.SetParent(transform);
-            item.transform.position = new Vector3(x, 7, z);
+            item.transform.position = new Vector3(x, 15, z);
 
             delta = 0;
         }
